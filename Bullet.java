@@ -18,8 +18,10 @@ public class Bullet extends Actor
        int x = getX();
        int y = getY() - speed;
        setLocation(x, y);
-       
+       MyWorld world = (MyWorld) getWorld();
+        if(getY() < 0){
+            world.removeObject(this);
  
-       
+        }
     }   
 }
