@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bullet extends Actor
 {
-    private int speed = 5;
+    private int speed = 10;
     /**
      * Act - do whatever the bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,7 +21,13 @@ public class Bullet extends Actor
        MyWorld world = (MyWorld) getWorld();
         if(getY() < 0){
             world.removeObject(this);
+            return;
  
+        }
+        if(isTouching(Aliens.class))
+        {
+            removeTouching(Aliens.class);
+            world.removeObject(this);
         }
     }   
 }

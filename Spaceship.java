@@ -25,12 +25,21 @@ public class Spaceship extends Actor
         else if(Greenfoot.isKeyDown("d")){
             move(k);
         }
-       if(Greenfoot.isKeyDown("space") && shotTimer.millisElapsed() > 200){
+       if(Greenfoot.isKeyDown("space") && shotTimer.millisElapsed() > 500){
            Bullet bullet = new Bullet();
            MyWorld world = (MyWorld) getWorld();
            world.addObject(bullet, getX(), getY());
            shotTimer.mark();
 
         }    
+       if(getX() > getWorld().getWidth()){
+            setLocation(getWorld().getWidth(), 700);
+       
+        }
+        if(getX() < 0){
+            setLocation(0,700); 
+        
+       
+        }
     }
 }
