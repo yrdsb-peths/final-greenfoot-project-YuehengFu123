@@ -25,9 +25,9 @@ public class Aliens extends Actor
         }
        n+=1;
        move(5);
-       if(getY() > 400)
+       if(getY() > getWorld().getHeight())
        {
-           setLocation(getX(), 400);
+           setLocation(getX(), getWorld().getHeight());
         }
        if(getY() < 0){
            setLocation(getX(), 0);

@@ -20,4 +20,8 @@ public class MyWorld extends World
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, 300, 700);
     }
+    public void act()
+    {
+        
+    }    
 }

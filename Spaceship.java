@@ -13,6 +13,7 @@ public class Spaceship extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int k = 10; 
+    int h = 3;
     SimpleTimer shotTimer = new SimpleTimer();
     // speed of spaceship
     public void act() 
