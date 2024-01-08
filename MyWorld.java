@@ -24,11 +24,14 @@ public class MyWorld extends World
     public void act()
     {
         
-    }
-  public void increaseScore()
-  {
-      score+=1;
-  }
+
   
+    }
+    public void increaseScore(){
+      score+=1;
+    }
+
+} 
       
-}
+   
+

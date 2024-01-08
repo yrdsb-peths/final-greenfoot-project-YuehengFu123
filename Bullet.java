@@ -30,5 +30,10 @@ public class Bullet extends Actor
             world.removeObject(this);
             world.increaseScore();
         }
+        if(isTouching(OrderedAlien.class))
+        {
+            removeTouching(OrderedAlien.class);
+            world.removeObject(this);
+        }
     }   
 }
