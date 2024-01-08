@@ -28,6 +28,7 @@ public class Bullet extends Actor
         {
             removeTouching(Aliens.class);
             world.removeObject(this);
+            world.increaseScore();
         }
     }   
 }
