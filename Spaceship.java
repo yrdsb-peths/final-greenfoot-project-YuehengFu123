@@ -13,11 +13,12 @@ public class Spaceship extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int k = 10; 
+    
     SimpleTimer shotTimer = new SimpleTimer();
     // speed of spaceship
     public void act() 
     {
-       
+       MyWorld world = (MyWorld) getWorld();
        if(Greenfoot.isKeyDown("a")){
             move(-k);
             
@@ -27,19 +28,23 @@ public class Spaceship extends Actor
         }
        if(Greenfoot.isKeyDown("space") && shotTimer.millisElapsed() > 500){
            Bullet bullet = new Bullet();
-           MyWorld world = (MyWorld) getWorld();
            world.addObject(bullet, getX(), getY());
            shotTimer.mark();
 
         }    
        if(getX() > getWorld().getWidth()){
-            setLocation(getWorld().getWidth(), 700);
+            setLocation(world.getWidth(), 700);
        
         }
         if(getX() < 0){
             setLocation(0,700); 
         
        
+        }
+        if(isTouching(Aliens.class))
+        {
+            world.decreaseHealth();
+            removeTouching(Aliens.class);
         }
     }
 }

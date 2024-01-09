@@ -28,6 +28,12 @@ public class Bullet extends Actor
         {
             removeTouching(Aliens.class);
             world.removeObject(this);
+            world.increaseScore();
+        }
+        else if(isTouching(OrderedAlien.class))
+        {
+            removeTouching(OrderedAlien.class);
+            world.removeObject(this);
         }
     }   
 }
