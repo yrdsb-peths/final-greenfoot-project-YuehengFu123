@@ -18,7 +18,7 @@ public class Aliens extends Actor
 
     public void act() 
     {
-       if(n % 20 == 0)
+       if(n % 30 == 0)
        {
            angle = Greenfoot.getRandomNumber(359);
            setRotation(angle);
@@ -27,18 +27,23 @@ public class Aliens extends Actor
        move(5);
        if(getY() > getWorld().getHeight())
        {
-           setLocation(getX(), getWorld().getHeight());
+           turnTowards(getX(), 0);
+           move(10);
         }
        if(getY() < 0){
-           setLocation(getX(), 0);
+           turnTowards(getX(), 800);
+           move(10);
+           
         }
        if(getX() > getWorld().getWidth()){
-            setLocation(getWorld().getWidth(), getY());
+            turnTowards(0, getY());
+            move(10);
        
         }
         if(getX() < 0){
-            setLocation(0,getY()); 
-        
+            turnTowards(600, getY());
+            move(10); 
+            
        
         } 
        

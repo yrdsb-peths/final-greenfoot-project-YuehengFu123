@@ -14,6 +14,11 @@ public class AlienBoss extends Actor
      */
     int k = 3;
     int h = 3;
+    
+    public AlienBoss(int h, int k){
+        this.k = k;
+        this.h = h;
+    }
     public void act() 
     {
         if(isTouching(Bullet.class))

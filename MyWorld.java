@@ -29,13 +29,17 @@ public class MyWorld extends World
     }
     public void act()
     {
-        
+        if(h == 0){
+            Label gameOverLabel = new Label("Game Over!", 70);
+       addObject(gameOverLabel, getWidth()/2, getHeight()/2);
 
   
+        }
     }
     public void decreaseHealth(){
       h-=1;
       healthLabel.setValue(h);
+      
     }
      public void increaseScore()
     {
