@@ -46,5 +46,6 @@ public class Spaceship extends Actor
             world.decreaseHealth();
             removeTouching(Aliens.class);
         }
+        
     }
 }

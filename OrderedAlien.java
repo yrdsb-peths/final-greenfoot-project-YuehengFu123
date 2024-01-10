@@ -21,13 +21,13 @@ public class OrderedAlien extends Actor
     public void act()
     {
         a+=1;
-        if(a < 400){
+        if(a < 200){
             move(1);
         }
-        if(a >800){
+        if(a >400){
             a = 0;
         }
-        if(a > 400 ){
+        if(a > 200 ){
             move(-1);
         }
      }
