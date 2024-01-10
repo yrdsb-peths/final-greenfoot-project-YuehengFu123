@@ -1,28 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class AlienBoss here.
+ * Write a description of class FinalBoss here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class AlienBoss extends Actor
+public class FinalBoss extends Actor
 {
-    /**
-     * Act - do whatever the AlienBoss wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    int k = 3;
+    int k = 7;
     int h = 3;
-    int coolDown = 500;
-    int bulletSpeed = 5;
+    int coolDown = 1000;
+    int bulletSpeed = 2;
+    int i = 0;
     SimpleTimer shotTimer = new SimpleTimer();
+    SimpleTimer specialTimer = new SimpleTimer();
+    SimpleTimer specialTimerCD = new SimpleTimer();
     
-    public AlienBoss(int h, int k, int coolDown, int bulletSpeed){
-        this.k = k;
-        this.h = h;
-        this.coolDown = coolDown;
-    }
+    
     public void act() 
     {
         if(getX() > getWorld().getWidth()){
@@ -55,6 +50,13 @@ public class AlienBoss extends Actor
 
         
         }
+        if(specialTimer.millisElapsed() > 2000){
+            for(int i = 0; i <=360; i +=45){
+                FinalBossBullet bullet = new FinalBossBullet(i);
+                getWorld().addObject(bullet, getX(), getY());
+                specialTimer.mark();
+            }
+        }
         if(h == 0){
             getWorld().removeObject(this);
         
@@ -62,5 +64,4 @@ public class AlienBoss extends Actor
         
     }
     
-     
 }

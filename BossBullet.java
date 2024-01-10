@@ -26,7 +26,6 @@ public class BossBullet extends Actor
        setLocation(x, y);
        MyWorld world = (MyWorld) getWorld();
         if(getY() < 0){
-            world.decreaseHealth();
             world.removeObject(this);
             return;
  

@@ -30,5 +30,12 @@ public class OrderedAlien extends Actor
         if(a > 200 ){
             move(-1);
         }
+        if(isTouching(Spaceship.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            removeTouching(Aliens.class);
+            world.removeObject(this);
+            world.decreaseHealth();
+        }
      }
 }
