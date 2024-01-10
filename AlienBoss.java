@@ -14,23 +14,33 @@ public class AlienBoss extends Actor
      */
     int k = 3;
     int h = 3;
+    int coolDown = 1000;
+    int bulletSpeed = 2;
+    SimpleTimer shotTimer = new SimpleTimer();
     
-    public AlienBoss(int h, int k){
+    public AlienBoss(int h, int k, int coolDown, int bulletSpeed){
         this.k = k;
         this.h = h;
+        this.coolDown = coolDown;
     }
     public void act() 
     {
+        if(getX() > getWorld().getWidth()){
+            setLocation(getWorld().getWidth(), getY());
+       
+        }
+        if(getX() < 0){
+            setLocation(0,getY()); 
+        
+       
+        }
         if(isTouching(Bullet.class))
         {
             removeTouching(Bullet.class);
             h-=1;
        
         }   
-        if(h == 0){
-            getWorld().removeObject(this);
         
-        }
         if(Greenfoot.isKeyDown("a")){
             move(-k);
             
@@ -38,5 +48,19 @@ public class AlienBoss extends Actor
         else if(Greenfoot.isKeyDown("d")){
             move(k);
         }
-}
+        if(shotTimer.millisElapsed() > coolDown){
+           BossBullet bullet = new BossBullet(bulletSpeed);
+           getWorld().addObject(bullet, getX(), getY());
+           shotTimer.mark();
+
+        
+        }
+        if(h == 0){
+            getWorld().removeObject(this);
+        
+        }
+        
+    }
+    
+     
 }

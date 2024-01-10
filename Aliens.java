@@ -25,7 +25,7 @@ public class Aliens extends Actor
         }
        n+=1;
        move(5);
-       if(getY() > getWorld().getHeight())
+       if(getY() > 750)
        {
            turnTowards(getX(), 0);
            move(10);
