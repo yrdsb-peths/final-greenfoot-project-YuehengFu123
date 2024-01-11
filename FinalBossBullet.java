@@ -23,16 +23,12 @@ public class FinalBossBullet extends Actor
         move(1);
         MyWorld world = (MyWorld) getWorld();
         
+        
+        
         if(getY() < 0){
             world.removeObject(this);
             return;
  
-        }
-        if(isTouching(Spaceship.class))
-        {
-            removeTouching(Aliens.class);
-            world.removeObject(this);
-            world.decreaseHealth();
         }
         if(getY() < 0){
             world.removeObject(this);
@@ -47,9 +43,16 @@ public class FinalBossBullet extends Actor
             world.removeObject(this);
             return;
         }
-        if(getX() <800){
+        if(getX() <0){
             world.removeObject(this);
             return;
+        }
+        if(isTouching(Spaceship.class))
+        {
+            removeTouching(Aliens.class);
+            world.decreaseHealth();
+            world.removeObject(this);
+            
         }
     }
 }

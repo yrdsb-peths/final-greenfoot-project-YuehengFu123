@@ -60,4 +60,8 @@ public class Spaceship extends Actor
         }
         
     }
+    
+    public void reset(){
+        setLocation(300, 700);
+    }
 }

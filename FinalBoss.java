@@ -20,8 +20,9 @@ public class FinalBoss extends Actor
     
     public void act() 
     {
-        if(getX() > getWorld().getWidth()){
-            setLocation(getWorld().getWidth(), getY());
+        MyWorld world = (MyWorld) getWorld();
+        if(getX() > world.getWidth()){
+            setLocation(world.getWidth(), getY());
        
         }
         if(getX() < 0){
@@ -45,7 +46,7 @@ public class FinalBoss extends Actor
         }
         if(shotTimer.millisElapsed() > coolDown){
            BossBullet bullet = new BossBullet(bulletSpeed);
-           getWorld().addObject(bullet, getX(), getY());
+           world.addObject(bullet, getX(), getY());
            shotTimer.mark();
 
         
