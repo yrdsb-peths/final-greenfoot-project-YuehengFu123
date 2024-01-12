@@ -36,7 +36,6 @@ public class TitleScreen extends World
      */
     private void prepare()
     {
-
         
     }
 }

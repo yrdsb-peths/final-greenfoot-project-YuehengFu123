@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Main world
@@ -30,9 +30,8 @@ public class MyWorld extends World
     public void act()
     {
         if(h == 0){
-            Label gameOverLabel = new Label("Game Over!", 70);
-            addObject(gameOverLabel, getWidth()/2, getHeight()/2);
-            EndScreen gameWorld = new EndScreen();
+            
+            EndScreen gameWorld = new EndScreen(score);
             Greenfoot.setWorld(gameWorld);
 
   
@@ -193,7 +192,58 @@ public class MyWorld extends World
             }
             
             if(stage == 6){
-            
+                spaceship.reset();
+                AlienShooter alienShooter = new AlienShooter();
+                addObject(alienShooter,117,333);
+                AlienShooter alienShooter2 = new AlienShooter();
+                addObject(alienShooter2,472,329);
+                OrderedAlien orderedAlien = new OrderedAlien();
+                addObject(orderedAlien,284,509);
+                OrderedAlien orderedAlien2 = new OrderedAlien();
+                addObject(orderedAlien2,229,409);
+                OrderedAlien orderedAlien3 = new OrderedAlien();
+                addObject(orderedAlien3,374,408);
+                OrderedAlien orderedAlien4 = new OrderedAlien();
+                addObject(orderedAlien4,184,330);
+                alienShooter2.setLocation(508,340);
+                alienShooter.setLocation(56,323);
+                OrderedAlien orderedAlien5 = new OrderedAlien();
+                addObject(orderedAlien5,436,322);
+                OrderedAlien orderedAlien6 = new OrderedAlien();
+                addObject(orderedAlien6,89,412);
+                OrderedAlien orderedAlien7 = new OrderedAlien();
+                addObject(orderedAlien7,504,409);
+                Aliens aliens = new Aliens();
+                addObject(aliens,161,371);
+                Aliens aliens2 = new Aliens();
+                addObject(aliens2,439,369);
+                Aliens aliens3 = new Aliens();
+                addObject(aliens3,197,213);
+                Aliens aliens4 = new Aliens();
+                addObject(aliens4,322,212);
+                Aliens aliens5 = new Aliens();
+                addObject(aliens5,440,207);
+                Aliens aliens6 = new Aliens();
+                addObject(aliens6,303,316);
+                OrderedAlien orderedAlien8 = new OrderedAlien();
+                addObject(orderedAlien8,50,487);
+                OrderedAlien orderedAlien9 = new OrderedAlien();
+                addObject(orderedAlien9,564,510);
+                AlienShooter alienShooter3 = new AlienShooter();
+                addObject(alienShooter3,328,46);
+                AlienShooter alienShooter4 = new AlienShooter();
+                addObject(alienShooter4,206,128);
+                AlienShooter alienShooter5 = new AlienShooter();
+                addObject(alienShooter5,329,117);
+                AlienShooter alienShooter6 = new AlienShooter();
+                addObject(alienShooter6,418,116);
+        
+                alienShooter5.setLocation(41,54);
+                alienShooter3.setLocation(571,19);
+                alienShooter4.setLocation(119,125);
+                alienShooter6.setLocation(506,94);
+                alienShooter4.setLocation(127,121);
+                alienShooter6.setLocation(509,91);
             }
         }
     }
