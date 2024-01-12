@@ -29,19 +29,19 @@ public class AlienShooter extends Actor
         if(a > 100 ){
             move(-1);
         }
-        if(isTouching(Spaceship.class))
-        {
-            
-            removeTouching(Aliens.class);
-            world.removeObject(this);
-            world.decreaseHealth();
-        }
+        
          if(shotTimer.millisElapsed() > coolDown){
            ShooterBullet bullet = new ShooterBullet(bulletSpeed);
            getWorld().addObject(bullet, getX(), getY());
            shotTimer.mark();
 
         
+        }
+        if(isTouching(Spaceship.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.removeObject(this);
+            world.decreaseHealth();
         }
      }
        

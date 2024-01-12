@@ -32,6 +32,8 @@ public class MyWorld extends World
         if(h == 0){
             Label gameOverLabel = new Label("Game Over!", 70);
             addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+            EndScreen gameWorld = new EndScreen();
+            Greenfoot.setWorld(gameWorld);
 
   
         }
@@ -72,6 +74,7 @@ public class MyWorld extends World
                 addObject(aliens2,295,218);
             }
             if(stage == 3){
+                spaceship.reset();
                 OrderedAlien orderedAlien = new OrderedAlien();
                 addObject(orderedAlien,112,199);
                 OrderedAlien orderedAlien2 = new OrderedAlien();
