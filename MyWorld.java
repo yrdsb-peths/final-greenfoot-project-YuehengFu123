@@ -199,9 +199,9 @@ public class MyWorld extends World
       healthLabel.setValue(h);
       
     }
-     public void increaseScore()
+     public void increaseScore(int s)
     {
-     score++;
+     score+=s;
     }
 
 } 

@@ -17,6 +17,7 @@ public class AlienBoss extends Actor
     int coolDown = 500;
     int bulletSpeed = 5;
     SimpleTimer shotTimer = new SimpleTimer();
+    MyWorld world = (MyWorld) getWorld();
     
     public AlienBoss(int h, int k, int coolDown, int bulletSpeed){
         this.k = k;
@@ -50,13 +51,14 @@ public class AlienBoss extends Actor
         }
         if(shotTimer.millisElapsed() > coolDown){
            BossBullet bullet = new BossBullet(bulletSpeed);
-           getWorld().addObject(bullet, getX(), getY());
+           world.addObject(bullet, getX(), getY());
            shotTimer.mark();
 
         
         }
         if(h == 0){
-            getWorld().removeObject(this);
+            world.removeObject(this);
+            world.increaseScore(1500);
         
         }
         

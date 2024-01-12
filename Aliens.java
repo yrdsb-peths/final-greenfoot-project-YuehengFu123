@@ -12,7 +12,6 @@ public class Aliens extends Actor
      * Act - do whatever the Aliens wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    static int count = 0;
     int angle = 0;
     int n = 0;
 

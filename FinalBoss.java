@@ -13,6 +13,7 @@ public class FinalBoss extends Actor
     int coolDown = 1000;
     int bulletSpeed = 2;
     int i = 0;
+    
     SimpleTimer shotTimer = new SimpleTimer();
     SimpleTimer specialTimer = new SimpleTimer();
     SimpleTimer specialTimerCD = new SimpleTimer();
@@ -30,6 +31,7 @@ public class FinalBoss extends Actor
         
        
         }
+        
         if(isTouching(Bullet.class))
         {
             removeTouching(Bullet.class);
@@ -60,8 +62,11 @@ public class FinalBoss extends Actor
         }
         if(h == 0){
             getWorld().removeObject(this);
+            world.increaseScore(3000);
+
         
         }
+        
         
     }
     
