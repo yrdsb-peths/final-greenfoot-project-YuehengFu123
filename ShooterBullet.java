@@ -12,12 +12,14 @@ public class ShooterBullet extends Actor
      * Act - do whatever the ShooterBullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GifImage gifImage = new GifImage("alienBullet.gif");
     private int speed = 2;
     public ShooterBullet(int speed){
         this.speed = speed;
     }
     public void act() 
     {
+        setImage(gifImage.getCurrentImage());
         int x = getX();
        int y = getY() + speed;
        setLocation(x, y);

@@ -14,7 +14,7 @@ public class Aliens extends Actor
      */
     int angle = 0;
     int n = 0;
-
+    GifImage gifImage = new GifImage("Alien.gif");
     public void act() 
     {
        if(n % 30 == 0)
@@ -24,6 +24,8 @@ public class Aliens extends Actor
         }
        n+=1;
        move(5);
+       
+       setImage(gifImage.getCurrentImage());
        if(getY() > 750)
        {
            turnTowards(getX(), 0);

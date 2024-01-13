@@ -13,9 +13,30 @@ public class Spaceship extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int k = 5; 
-    
+    GreenfootImage[] idle = new GreenfootImage[10];
+    SimpleTimer animationTimer = new SimpleTimer();
     SimpleTimer shotTimer = new SimpleTimer();
+    
+    public Spaceship(){
+        for(int i = 0; i<idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/Spaceship_idle/spaceshipIdle0" + i + ".png");
+            idle[i].scale(80, 80);
+        }
+    }
     // speed of spaceship
+    int imageIndex = 0;
+     public void animateSpaceship()
+    {
+        if(animationTimer.millisElapsed() < 50)
+        {
+            return;
+        }
+        animationTimer.mark();
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex +1 ) %idle.length;
+       
+    }
     public void act() 
     {
        MyWorld world = (MyWorld) getWorld();
@@ -58,7 +79,7 @@ public class Spaceship extends Actor
             world.decreaseHealth();
             removeTouching(Aliens.class);
         }
-        
+        animateSpaceship();
     }
     
     public void reset(){

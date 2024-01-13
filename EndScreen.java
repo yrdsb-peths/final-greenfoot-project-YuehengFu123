@@ -20,6 +20,6 @@ public class EndScreen extends World
         super(600, 800, 1); 
         this.score= score;
         Label gameOverLabel = new Label(score, 70);
-        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        addObject(gameOverLabel, 100, getHeight()/2);
     }
 }

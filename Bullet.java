@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bullet extends Actor
 {
     private int speed = 10;
+    GifImage gifImage = new GifImage("bullet.gif");
     /**
      * Act - do whatever the bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,6 +18,8 @@ public class Bullet extends Actor
     {
        int x = getX();
        int y = getY() - speed;
+        setImage(gifImage.getCurrentImage());
+
        setLocation(x, y);
        MyWorld world = (MyWorld) getWorld();
         if(getY() < 0){

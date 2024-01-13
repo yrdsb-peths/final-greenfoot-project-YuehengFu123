@@ -12,6 +12,8 @@ public class AlienShooter extends Actor
      * Act - do whatever the AlienShooter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GifImage gifImage = new GifImage("shootingalien.gif");
+
     int a = 0;
     int coolDown = 2000;
     int bulletSpeed = 5;
@@ -19,6 +21,8 @@ public class AlienShooter extends Actor
     SimpleTimer shotTimer = new SimpleTimer();
     public void act() 
     {
+        setImage(gifImage.getCurrentImage());
+
        a+=1;
         if(a < 100){
             move(1);
