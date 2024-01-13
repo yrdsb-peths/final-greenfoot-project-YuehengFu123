@@ -17,7 +17,8 @@ public class AlienBoss extends Actor
     int coolDown = 500;
     int bulletSpeed = 5;
     SimpleTimer shotTimer = new SimpleTimer();
-    
+    GifImage gifImage = new GifImage("AlienGeneral.gif");
+
     
     public AlienBoss(int h, int k, int coolDown, int bulletSpeed){
         this.k = k;
@@ -26,6 +27,7 @@ public class AlienBoss extends Actor
     }
     public void act() 
     {
+        setImage(gifImage.getCurrentImage());
         if(getX() > getWorld().getWidth()){
             setLocation(getWorld().getWidth(), getY());
        
