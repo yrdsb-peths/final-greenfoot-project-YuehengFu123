@@ -12,10 +12,9 @@ public class Aliens extends Actor
      * Act - do whatever the Aliens wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    static int count = 0;
     int angle = 0;
     int n = 0;
-
+    GifImage gifImage = new GifImage("Alien.gif");
     public void act() 
     {
        if(n % 30 == 0)
@@ -25,6 +24,8 @@ public class Aliens extends Actor
         }
        n+=1;
        move(5);
+       
+       setImage(gifImage.getCurrentImage());
        if(getY() > 750)
        {
            turnTowards(getX(), 0);

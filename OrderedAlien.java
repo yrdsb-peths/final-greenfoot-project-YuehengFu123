@@ -13,13 +13,14 @@ public class OrderedAlien extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int a = 0;
-    
+    GifImage gifImage = new GifImage("orderedAlien.gif");
     public OrderedAlien(){
         
     }
 
     public void act()
     {
+        setImage(gifImage.getCurrentImage());
         a+=1;
         if(a < 200){
             move(1);
@@ -29,6 +30,12 @@ public class OrderedAlien extends Actor
         }
         if(a > 200 ){
             move(-1);
+        }
+        if(isTouching(Spaceship.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.removeObject(this);
+            world.decreaseHealth();
         }
      }
 }

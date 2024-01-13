@@ -5,7 +5,7 @@
  * Yueheng Fu
  * December 2023
  */
-public class MyWorld extends World
+public class CopyOfMyWorld extends World
 {
   int stage = 0;
   int h = 3;
@@ -16,11 +16,11 @@ public class MyWorld extends World
   SimpleTimer time = new SimpleTimer();
   GifImage gifImage = new GifImage("galaxyBackground.gif");
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class CopyOfMyWorld.
      * 
      */
     
-    public MyWorld()
+    public CopyOfMyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 800, 1, false);
