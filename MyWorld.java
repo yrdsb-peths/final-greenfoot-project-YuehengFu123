@@ -42,7 +42,8 @@ public class MyWorld extends World
         }
         if(getObjects(Aliens.class).size() == 0 &&
         getObjects(AlienBoss.class).size() == 0 &&
-        getObjects(OrderedAlien.class).size() ==0){
+        getObjects(OrderedAlien.class).size() ==0 && 
+        getObjects(FinalBoss.class).size() ==0){
             stage+=1;
             if(stage == 1){
                 

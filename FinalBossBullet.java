@@ -13,6 +13,8 @@ public class FinalBossBullet extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int dir = 0;
+    GifImage gifImage = new GifImage("electricShuriken.gif");
+
     public FinalBossBullet(int dir){
         this.dir = dir;
         setRotation(dir);
@@ -22,7 +24,8 @@ public class FinalBossBullet extends Actor
         
         move(1);
         MyWorld world = (MyWorld) getWorld();
-        
+        setImage(gifImage.getCurrentImage());
+
         
         
         if(getY() < 0){
