@@ -12,6 +12,8 @@ public class BossBullet extends Actor
      * Act - do whatever the BossBullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GifImage gifImage = new GifImage("alienBossBullet.gif");
+
     private int speed = 2;
     public BossBullet(int speed){
         this.speed = speed;
@@ -20,7 +22,7 @@ public class BossBullet extends Actor
     public void act() 
     {
             
-
+        setImage(gifImage.getCurrentImage());
        int x = getX();
        int y = getY() + speed;
        setLocation(x, y);

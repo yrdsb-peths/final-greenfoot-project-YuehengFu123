@@ -10,7 +10,7 @@ public class FinalBoss extends Actor
 {
     int k = 7;
     int h = 3;
-    int coolDown = 1000;
+    int coolDown = 1500;
     int bulletSpeed = 2;
     int i = 0;
     
