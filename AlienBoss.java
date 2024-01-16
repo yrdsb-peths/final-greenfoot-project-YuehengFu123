@@ -55,6 +55,10 @@ public class AlienBoss extends Actor
            BossBullet bullet = new BossBullet(bulletSpeed);
            getWorld().addObject(bullet, getX(), getY());
            shotTimer.mark();
+           GreenfootSound bulletSound = new GreenfootSound("alienBossShot.mp3");
+            bulletSound.setVolume(40);
+
+           bulletSound.play();
 
         
         }

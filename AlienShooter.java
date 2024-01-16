@@ -38,6 +38,9 @@ public class AlienShooter extends Actor
            ShooterBullet bullet = new ShooterBullet(bulletSpeed);
            getWorld().addObject(bullet, getX(), getY());
            shotTimer.mark();
+           GreenfootSound bulletSound = new GreenfootSound("alienShot.mp3");
+           bulletSound.setVolume(40);
+           bulletSound.play();
 
         
         }

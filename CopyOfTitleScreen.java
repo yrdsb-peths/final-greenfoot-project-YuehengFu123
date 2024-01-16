@@ -25,7 +25,7 @@ public class CopyOfTitleScreen extends World
         // starts the game if the user presses space
         if(Greenfoot.isKeyDown("space"))
         {
-            MyWorld gameWorld = new MyWorld();
+            MyWorld gameWorld = new MyWorld(999);
             Greenfoot.setWorld(gameWorld);
         }
         if(Greenfoot.isKeyDown("up")){

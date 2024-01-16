@@ -24,4 +24,15 @@ public class EndScreen extends World
         Label gameOverLabel = new Label(score, 70);
         addObject(gameOverLabel, 100, getHeight()/2);
     }
+    public void act(){
+        if(Greenfoot.isKeyDown("r"))
+        {
+            MyWorld gameWorld = new MyWorld(3);
+            Greenfoot.setWorld(gameWorld);
+        }
+        if(Greenfoot.isKeyDown("m")){
+            
+        }
+        
+    }
 }

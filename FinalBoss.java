@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FinalBoss extends Actor
 {
-    int k = 7;
+    int k = 2;
     int h = 3;
     int coolDown = 1500;
     int bulletSpeed = 2;

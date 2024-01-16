@@ -32,6 +32,7 @@ public class Bullet extends Actor
         {
             removeTouching(Aliens.class);
             GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.setVolume(60);
             alienDeath.play();
             world.removeObject(this);
             world.increaseScore(500);
@@ -40,6 +41,7 @@ public class Bullet extends Actor
         {
             removeTouching(OrderedAlien.class);
             GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.setVolume(60);
             alienDeath.play();
             world.removeObject(this);
             world.increaseScore(100);
@@ -48,6 +50,7 @@ public class Bullet extends Actor
         {
             removeTouching(AlienShooter.class);
             GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.setVolume(60);
             alienDeath.play();
             world.removeObject(this);
             world.increaseScore(300);
