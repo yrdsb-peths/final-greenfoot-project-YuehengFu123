@@ -35,7 +35,7 @@ public class CopyOfMyWorld extends World
 
         if(h == 0){
             
-            EndScreen gameWorld = new EndScreen(score);
+            EndScreen gameWorld = new EndScreen(score, stage);
             Greenfoot.setWorld(gameWorld);
 
   
