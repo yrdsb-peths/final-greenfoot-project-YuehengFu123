@@ -17,6 +17,7 @@ public class Spaceship extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     SimpleTimer shotTimer = new SimpleTimer();
     
+
     public Spaceship(){
         for(int i = 0; i<idle.length; i++)
         {
@@ -56,6 +57,8 @@ public class Spaceship extends Actor
        if(Greenfoot.isKeyDown("space") && shotTimer.millisElapsed() > 500){
            Bullet bullet = new Bullet();
            world.addObject(bullet, getX(), getY());
+           GreenfootSound bulletSound = new GreenfootSound("mainBullet.mp3");
+           bulletSound.play();
            shotTimer.mark();
 
         }    

@@ -52,6 +52,8 @@ public class FinalBoss extends Actor
            BossBullet bullet = new BossBullet(bulletSpeed);
            world.addObject(bullet, getX(), getY());
            shotTimer.mark();
+           GreenfootSound bulletSound = new GreenfootSound("alienBossShot.mp3");
+           bulletSound.play();
 
         
         }
@@ -63,6 +65,8 @@ public class FinalBoss extends Actor
             }
         }
         if(h == 0){
+            GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.play();
             getWorld().removeObject(this);
             world.increaseScore(3000);
 
