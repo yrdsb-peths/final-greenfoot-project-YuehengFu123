@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class AlienBoss here.
+ * Alien Boss with helmet
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu
+ * @ January 2024
  */
 public class AlienBoss extends Actor
 {

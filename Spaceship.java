@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Main spaceship object
  * 
  * @author Yueheng Fu
- * @ december 2023 
+ * @ January 2023 
  */
 public class Spaceship extends Actor
 {

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Aliens here.
+ * Purple alien that moves randomly
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu  
+ * @ January 2024
  */
 public class Aliens extends Actor
 {
@@ -13,6 +13,7 @@ public class Aliens extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int angle = 0;
+    // direction of the Alien's movement
     int n = 0;
     GifImage gifImage = new GifImage("Alien.gif");
 
@@ -22,6 +23,7 @@ public class Aliens extends Actor
        {
            angle = Greenfoot.getRandomNumber(359);
            setRotation(angle);
+           // choosing a random direction every 30 acts
         }
        n+=1;
        move(5);

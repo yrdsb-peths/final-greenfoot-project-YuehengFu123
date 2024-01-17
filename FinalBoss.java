@@ -1,15 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FinalBoss here.
+ * the final boss with a crown
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu
+ * @January 2024
  */
 public class FinalBoss extends Actor
 {
     int k = 2;
+    // speed following main spaceship
     int h = 7;
+    // health
     int coolDown = 1500;
     int bulletSpeed = 2;
     int i = 0;
@@ -58,6 +60,7 @@ public class FinalBoss extends Actor
         
         }
         if(specialTimer.millisElapsed() > 3000){
+            // shooting a special bullet in every direction
             for(int i = 0; i <=360; i +=45){
                 FinalBossBullet bullet = new FinalBossBullet(i);
                 getWorld().addObject(bullet, getX(), getY());

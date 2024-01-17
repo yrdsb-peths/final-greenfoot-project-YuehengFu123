@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class FinalBossBullet here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu
+ * @ January 2024
  */
 public class FinalBossBullet extends Actor
 {
@@ -18,6 +18,7 @@ public class FinalBossBullet extends Actor
     public FinalBossBullet(int dir){
         this.dir = dir;
         setRotation(dir);
+        // starting direction of bullet
     }
     public void act()
     {
