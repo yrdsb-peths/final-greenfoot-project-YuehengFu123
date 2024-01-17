@@ -31,7 +31,8 @@ public class EndScreen extends World
             Greenfoot.setWorld(gameWorld);
         }
         if(Greenfoot.isKeyDown("m")){
-            
+            TitleScreen gameWorld = new TitleScreen();
+            Greenfoot.setWorld(gameWorld);
         }
         
     }
