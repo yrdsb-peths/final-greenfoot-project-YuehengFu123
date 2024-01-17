@@ -41,17 +41,17 @@ public class Spaceship extends Actor
     public void act() 
     {
        MyWorld world = (MyWorld) getWorld();
-       if(Greenfoot.isKeyDown("a")){
+       if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             move(-k);
             
         }
-        else if(Greenfoot.isKeyDown("d")){
+        else if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             move(k);
         }
-       if(Greenfoot.isKeyDown("w")){
+       if(Greenfoot.isKeyDown("w") ||  Greenfoot.isKeyDown("up")){
            setLocation(getX(), getY()-k);
        }
-       if(Greenfoot.isKeyDown("s")){
+       if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down") ){
            setLocation(getX(), getY()+k);
        }
        if(Greenfoot.isKeyDown("space") && shotTimer.millisElapsed() > 500){

@@ -44,11 +44,11 @@ public class AlienBoss extends Actor
        
         }   
         
-        if(Greenfoot.isKeyDown("a")){
+        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             move(-k);
             
         }
-        else if(Greenfoot.isKeyDown("d")){
+        else if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             move(k);
         }
         if(shotTimer.millisElapsed() > coolDown){
