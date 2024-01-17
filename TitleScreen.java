@@ -25,7 +25,7 @@ public class TitleScreen extends World
         // starts the game if the user presses space
         if(Greenfoot.isKeyDown("space"))
         {
-            MyWorld gameWorld = new MyWorld();
+            MyWorld gameWorld = new MyWorld(3);
             Greenfoot.setWorld(gameWorld);
         }
         if(Greenfoot.isKeyDown("down")){
@@ -38,8 +38,10 @@ public class TitleScreen extends World
      * That is: create the initial objects and add them to the world.
      */
     }
+    
     private void prepare()
     {
+
         
     }
 }

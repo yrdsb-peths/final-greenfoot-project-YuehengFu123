@@ -1,5 +1,5 @@
  import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Main world
  * Yueheng Fu
@@ -13,36 +13,55 @@ public class MyWorld extends World
   Label scoreLabel;
   Label healthLabel;
   Spaceship spaceship = new Spaceship();
+  Heart heart = new Heart(3);
   SimpleTimer time = new SimpleTimer();
   GifImage gifImage = new GifImage("galaxyBackground.gif");
+  GreenfootSound backTrack = new GreenfootSound("backTrack.mp3");
+    
+
+          
+
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     
-    public MyWorld()
+    public MyWorld(int h)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 800, 1, false);
+        this.h = h;
         addObject(spaceship, 300, 700);
         healthLabel = new Label(0, 60);
         healthLabel.setValue(h);
         addObject(healthLabel, 30, 30);
+        addObject(heart,88,30);
+        backTrack.setVolume(50);
+        backTrack.play();
     }
     public void act()
     {
         setBackground(gifImage.getCurrentImage());
-
+        if(h == 2){
+            heart.secondLife();
+        }
+        if(h == 1){
+            heart.lastLife();
+        }
         if(h == 0){
             
-            EndScreen gameWorld = new EndScreen(score);
+            EndScreen gameWorld = new EndScreen(score, stage);
+            backTrack.stop();
             Greenfoot.setWorld(gameWorld);
-
+            
   
         }
         if(getObjects(Aliens.class).size() == 0 &&
         getObjects(AlienBoss.class).size() == 0 &&
-        getObjects(OrderedAlien.class).size() ==0){
+        getObjects(OrderedAlien.class).size() ==0 && 
+        getObjects(FinalBoss.class).size() ==0 && 
+        getObjects(AlienShooter.class).size()
+        == 0){
             stage+=1;
             if(stage == 1){
                 
@@ -248,6 +267,37 @@ public class MyWorld extends World
                 alienShooter6.setLocation(506,94);
                 alienShooter4.setLocation(127,121);
                 alienShooter6.setLocation(509,91);
+            }
+            if(stage == 7){
+                
+                FinalBoss finalBoss = new FinalBoss();
+                addObject(finalBoss,289,199);
+                Aliens aliens = new Aliens();
+                addObject(aliens,114,217);
+                Aliens aliens2 = new Aliens();
+                addObject(aliens2,496,200);
+                OrderedAlien orderedAlien = new OrderedAlien();
+                addObject(orderedAlien,191,311);
+                OrderedAlien orderedAlien2 = new OrderedAlien();
+                addObject(orderedAlien2,266,350);
+                OrderedAlien orderedAlien3 = new OrderedAlien();
+                addObject(orderedAlien3,364,345);
+                OrderedAlien orderedAlien4 = new OrderedAlien();
+                addObject(orderedAlien4,446,305);
+                OrderedAlien orderedAlien5 = new OrderedAlien();
+                addObject(orderedAlien5,514,343);
+                OrderedAlien orderedAlien6 = new OrderedAlien();
+                addObject(orderedAlien6,576,300);
+                OrderedAlien orderedAlien7 = new OrderedAlien();
+                addObject(orderedAlien7,104,348);
+                OrderedAlien orderedAlien8 = new OrderedAlien();
+                addObject(orderedAlien8,32,313);
+                AlienShooter alienShooter = new AlienShooter();
+                addObject(alienShooter,553,36);
+                AlienShooter alienShooter2 = new AlienShooter();
+                addObject(alienShooter2,53,43);
+                AlienShooter alienShooter3 = new AlienShooter();
+                addObject(alienShooter3,296,42);
             }
         }
     }

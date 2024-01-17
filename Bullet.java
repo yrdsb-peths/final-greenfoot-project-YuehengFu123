@@ -19,6 +19,7 @@ public class Bullet extends Actor
        int x = getX();
        int y = getY() - speed;
         setImage(gifImage.getCurrentImage());
+        
 
        setLocation(x, y);
        MyWorld world = (MyWorld) getWorld();
@@ -30,18 +31,27 @@ public class Bullet extends Actor
         if(isTouching(Aliens.class))
         {
             removeTouching(Aliens.class);
+            GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.setVolume(60);
+            alienDeath.play();
             world.removeObject(this);
             world.increaseScore(500);
         }
         else if(isTouching(OrderedAlien.class))
         {
             removeTouching(OrderedAlien.class);
+            GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.setVolume(60);
+            alienDeath.play();
             world.removeObject(this);
             world.increaseScore(100);
         }
         else if(isTouching(AlienShooter.class))
         {
             removeTouching(AlienShooter.class);
+            GreenfootSound alienDeath = new GreenfootSound("alienDeath.mp3");
+            alienDeath.setVolume(60);
+            alienDeath.play();
             world.removeObject(this);
             world.increaseScore(300);
         }
