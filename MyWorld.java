@@ -34,7 +34,10 @@ public class MyWorld extends World
         addObject(spaceship, 300, 700);
         healthLabel = new Label(0, 60);
         healthLabel.setValue(h);
+        scoreLabel = new Label(0, 40);
+        scoreLabel.setValue(score);
         addObject(healthLabel, 30, 30);
+        addObject(scoreLabel, 40, 80);
         addObject(heart,88,30);
         backTrack.setVolume(50);
         backTrack.play();
@@ -299,6 +302,11 @@ public class MyWorld extends World
                 AlienShooter alienShooter3 = new AlienShooter();
                 addObject(alienShooter3,296,42);
             }
+            if(stage == 8){
+                EndScreen gameWorld = new EndScreen(score, stage);
+                backTrack.stop();
+                Greenfoot.setWorld(gameWorld);
+            }
         }
     }
     public void decreaseHealth(){
@@ -309,6 +317,7 @@ public class MyWorld extends World
      public void increaseScore(int s)
     {
      score+=s;
+     scoreLabel.setValue(score);
     }
 
 } 
