@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Bullet that shoots out from the spaceship
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu
+ * @January 2024
  */
 public class Bullet extends Actor
 {

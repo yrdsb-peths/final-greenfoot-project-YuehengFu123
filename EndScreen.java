@@ -21,8 +21,12 @@ public class EndScreen extends World
         super(600, 800, 1); 
         this.score= score;
         this.stage = stage;
-        Label gameOverLabel = new Label(score, 70);
-        addObject(gameOverLabel, 100, getHeight()/2);
+
+        Label scoreLabel = new Label(score, 70);
+        addObject(scoreLabel, 100, getHeight()/2 - 60);
+        
+        Label stageLabel = new Label(stage, 70);
+        addObject(stageLabel, 100, getHeight()/2 + 50);
     }
     public void act(){
         if(Greenfoot.isKeyDown("r"))

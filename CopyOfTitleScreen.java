@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class CopyOfTitleScreen here.
+ * Title screen with the cheat mode selected.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu
+ * @January 2024
  */
 public class CopyOfTitleScreen extends World
 {
@@ -27,10 +27,12 @@ public class CopyOfTitleScreen extends World
         {
             MyWorld gameWorld = new MyWorld(999);
             Greenfoot.setWorld(gameWorld);
+            // enter game
         }
         if(Greenfoot.isKeyDown("up")){
             TitleScreen gameWorld = new TitleScreen();
             Greenfoot.setWorld(gameWorld);
+            // switch selection
         }
     }
 

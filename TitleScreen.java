@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * Starting menu
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu 
+ * @January 2024
  */
 public class TitleScreen extends World
 {
@@ -27,10 +27,12 @@ public class TitleScreen extends World
         {
             MyWorld gameWorld = new MyWorld(3);
             Greenfoot.setWorld(gameWorld);
+            // enter game
         }
         if(Greenfoot.isKeyDown("down")){
             CopyOfTitleScreen gameWorld = new CopyOfTitleScreen();
             Greenfoot.setWorld(gameWorld);
+            // switch mode selection
         }
 
     /**

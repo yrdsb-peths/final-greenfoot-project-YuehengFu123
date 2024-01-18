@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class AlienBoss here.
+ * Alien Boss with helmet
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu
+ * @ January 2024
  */
 public class AlienBoss extends Actor
 {
@@ -44,11 +44,11 @@ public class AlienBoss extends Actor
        
         }   
         
-        if(Greenfoot.isKeyDown("a")){
+        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             move(-k);
             
         }
-        else if(Greenfoot.isKeyDown("d")){
+        else if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             move(k);
         }
         if(shotTimer.millisElapsed() > coolDown){

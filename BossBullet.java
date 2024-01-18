@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BossBullet here.
+ * bullet that shoots from both final boss and normal boss
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @ Yueheng Fu
+ * @ January 2024
  */
 public class BossBullet extends Actor
 {
@@ -22,7 +22,7 @@ public class BossBullet extends Actor
     public void act() 
     {
             
-        setImage(gifImage.getCurrentImage());
+       setImage(gifImage.getCurrentImage());
        int x = getX();
        int y = getY() + speed;
        setLocation(x, y);
@@ -30,6 +30,7 @@ public class BossBullet extends Actor
         if(getY() < 0){
             world.removeObject(this);
             return;
+            // removes the bullet if it goes past world bounderies
  
         }
         if(isTouching(Spaceship.class))

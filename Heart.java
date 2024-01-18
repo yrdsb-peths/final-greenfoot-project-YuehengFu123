@@ -1,16 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Heart here.
+ * Heart graphic that shows up next to health.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Yueheng Fu 
+ * @January 2024
  */
 public class Heart extends Actor
 {
      GifImage gifImage = new GifImage("heart.gif");
      GifImage gifImage2 = new GifImage("heart2.gif");
+     // graphic for 2 lives left 
     GifImage gifImage3 = new GifImage("heart3.gif");
+    // graphic for last life
     int h = 3;
     /**
      * Act - do whatever the Heart wants to do. This method is called whenever
@@ -34,6 +36,7 @@ public class Heart extends Actor
     public void secondLife(){
         h= 2;
     }
+    
     public void lastLife(){
         h =1;
     }

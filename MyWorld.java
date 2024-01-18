@@ -3,22 +3,29 @@ import java.util.List;
 /**
  * Main world
  * Yueheng Fu
- * December 2023
+ * January 2024
  */
 public class MyWorld extends World
 {
   int stage = 0;
+  // stage/ level number
   int h = 3;
+  // starting health amount
   public int score = 0;
   Label scoreLabel;
+  // score label
   Label healthLabel;
+  // health label
   Spaceship spaceship = new Spaceship();
+  // main ship
   Heart heart = new Heart(3);
-  SimpleTimer time = new SimpleTimer();
+  // heart icon 
+ 
   GifImage gifImage = new GifImage("galaxyBackground.gif");
+  // background initialization
   GreenfootSound backTrack = new GreenfootSound("backTrack.mp3");
+  
     
-
           
 
     /**
@@ -32,20 +39,32 @@ public class MyWorld extends World
         super(600, 800, 1, false);
         this.h = h;
         addObject(spaceship, 300, 700);
+        
         healthLabel = new Label(0, 60);
         healthLabel.setValue(h);
+        // adding health label
+        scoreLabel = new Label(0, 40);
+        scoreLabel.setValue(score);
+        // adding score label
         addObject(healthLabel, 30, 30);
+        addObject(scoreLabel, 40, 80);
+        
         addObject(heart,88,30);
-        backTrack.setVolume(50);
+        //adding heart
+        
+        backTrack.setVolume(40);
         backTrack.play();
     }
     public void act()
     {
         setBackground(gifImage.getCurrentImage());
+        // making background move
         if(h == 2){
+            
             heart.secondLife();
         }
         if(h == 1){
+            
             heart.lastLife();
         }
         if(h == 0){
@@ -299,6 +318,11 @@ public class MyWorld extends World
                 AlienShooter alienShooter3 = new AlienShooter();
                 addObject(alienShooter3,296,42);
             }
+            if(stage == 8){
+                EndScreen gameWorld = new EndScreen(score, stage);
+                backTrack.stop();
+                Greenfoot.setWorld(gameWorld);
+            }
         }
     }
     public void decreaseHealth(){
@@ -309,6 +333,7 @@ public class MyWorld extends World
      public void increaseScore(int s)
     {
      score+=s;
+     scoreLabel.setValue(score);
     }
 
 } 

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ShooterBullet here.
+ * Bullet from the shooting alien
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @ Yueheng Fu 
+ * @ January 2024
  */
 public class ShooterBullet extends Actor
 {
@@ -20,7 +20,7 @@ public class ShooterBullet extends Actor
     public void act() 
     {
         setImage(gifImage.getCurrentImage());
-        int x = getX();
+       int x = getX();
        int y = getY() + speed;
        setLocation(x, y);
        MyWorld world = (MyWorld) getWorld();

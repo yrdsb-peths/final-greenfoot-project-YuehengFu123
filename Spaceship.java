@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Main spaceship object
  * 
  * @author Yueheng Fu
- * @ december 2023 
+ * @ January 2023 
  */
 public class Spaceship extends Actor
 {
@@ -41,24 +41,24 @@ public class Spaceship extends Actor
     public void act() 
     {
        MyWorld world = (MyWorld) getWorld();
-       if(Greenfoot.isKeyDown("a")){
+       if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             move(-k);
             
         }
-        else if(Greenfoot.isKeyDown("d")){
+        else if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             move(k);
         }
-       if(Greenfoot.isKeyDown("w")){
+       if(Greenfoot.isKeyDown("w") ||  Greenfoot.isKeyDown("up")){
            setLocation(getX(), getY()-k);
        }
-       if(Greenfoot.isKeyDown("s")){
+       if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down") ){
            setLocation(getX(), getY()+k);
        }
        if(Greenfoot.isKeyDown("space") && shotTimer.millisElapsed() > 500){
            Bullet bullet = new Bullet();
            world.addObject(bullet, getX(), getY());
            GreenfootSound bulletSound = new GreenfootSound("mainBullet.mp3");
-           bulletSound.setVolume(35);
+           bulletSound.setVolume(30);
            bulletSound.play();
            shotTimer.mark();
 
