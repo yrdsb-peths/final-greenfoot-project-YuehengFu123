@@ -24,8 +24,8 @@ public class MyWorld extends World
   GifImage gifImage = new GifImage("galaxyBackground.gif");
   // background initialization
   GreenfootSound backTrack = new GreenfootSound("backTrack.mp3");
+  
     
-
           
 
     /**
@@ -60,9 +60,11 @@ public class MyWorld extends World
         setBackground(gifImage.getCurrentImage());
         // making background move
         if(h == 2){
+            
             heart.secondLife();
         }
         if(h == 1){
+            
             heart.lastLife();
         }
         if(h == 0){
