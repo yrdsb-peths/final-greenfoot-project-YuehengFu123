@@ -58,7 +58,7 @@ public class Spaceship extends Actor
            Bullet bullet = new Bullet();
            world.addObject(bullet, getX(), getY());
            GreenfootSound bulletSound = new GreenfootSound("mainBullet.mp3");
-           bulletSound.setVolume(35);
+           bulletSound.setVolume(30);
            bulletSound.play();
            shotTimer.mark();
 

@@ -52,7 +52,7 @@ public class MyWorld extends World
         addObject(heart,88,30);
         //adding heart
         
-        backTrack.setVolume(50);
+        backTrack.setVolume(40);
         backTrack.play();
     }
     public void act()
