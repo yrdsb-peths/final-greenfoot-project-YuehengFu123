@@ -13,6 +13,7 @@ public class AlienBoss extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int k = 3;
+    //speed that the alien boss follows the player
     int h = 3;
     int coolDown = 500;
     int bulletSpeed = 5;
